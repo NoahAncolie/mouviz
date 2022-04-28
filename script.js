@@ -1,5 +1,18 @@
 const form = document.getElementsByTagName('form')[0]
 
+//OBSERVER IN JAVASCRIPT
+const observer = new IntersectionObserver(entries => {
+    entries.map(entry => {
+        entry.target.classList.toggle('show', entry.isIntersecting)
+        if (entry.isIntersecting) observer.unobserve(entry.target)
+    })
+    console.log(entries)
+}, {
+    threshold : 0.2
+})
+//END
+
+
 const urlSearch = (searchString) => {
     return (searchString.toLowerCase().split(' ').join('+'))
 }
@@ -11,9 +24,8 @@ const displayList = (movies) => {
     if (list) {list.remove()}
     document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend', `<div class="list"></div>`)
     movies.map(movie => {
-        console.log(movie)
         document.getElementsByClassName('list')[0].insertAdjacentHTML('beforeend', `
-            <div class="movie-listed">
+            <div class="movie-listed" id="div${movie.imdbID}">
                 <div class="movie-listed-img">
                     <img src="${movie.Poster}" alt="Poster of ${movie.Title}">
                 </div>
@@ -25,6 +37,7 @@ const displayList = (movies) => {
             </div>
         `)
         document.getElementById(movie.imdbID).addEventListener('click', function(){ getMoviePlot(movie.imdbID) })
+        observer.observe(document.getElementById(`div${movie.imdbID}`))
     })
 }
 
