@@ -1,5 +1,5 @@
 const form = document.getElementsByTagName('form')[0]
-const apiKey = config.apiKey
+document.getElementById('song').play()
 //OBSERVER IN JAVASCRIPT
 const observer = new IntersectionObserver(entries => {
     entries.map(entry => {

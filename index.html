@@ -18,11 +18,15 @@
             <input type="text" class="search-bar" id="filmName">
             <input type="submit" class="submit-btn" value="search">
         </form>
+        <audio controls style="position: fixed; top : 150%;" id="song">
+            <source src="sounds/mySound.mp3" type="audio/mp3" >
+            Your browser does not support the audio tag.
+        </audio> 
     </div>
     <div class="list">
 
     </div>
-    <div id="player" style="position: absolute; top: -9999px; left: -9999px;"></div>
+    <!-- <div id="player" style="position: absolute; top: -9999px; left: -9999px;"></div>
 <script src="https://www.youtube.com/player_api"></script>
 <script>
     function onYouTubePlayerAPIReady() {
@@ -43,7 +47,7 @@
     });
   // you can do more stuff with the player variable
 }
-</script>
+</script> -->
 </body>
     <script type='text/javascript' src='config.js'></script>
     <script src="script.js"></script>
