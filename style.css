@@ -42,8 +42,6 @@ a {
 
 .search {
     padding : 45px;
-    display : flex;
-    justify-content: center;
     width : 60%;
 }
 
@@ -72,6 +70,12 @@ a {
     padding : 0 20px;
     border : none ;
     background-color: var(--light);
+    transition: 0.35s ease-in-out;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary);
+    color : var(--light)
 }
 
 /* LISTING */
@@ -132,6 +136,14 @@ a {
 @keyframes fade-in {
     0% { transform: translateY(50%); opacity: 0%; }
     100% { }
+}
+
+.close-btn {
+    padding : 8.5px 20px;
+}
+
+.close-btn:hover {
+    background-color: #9f7a72;
 }
 
 /* MODALE */

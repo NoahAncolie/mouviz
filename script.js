@@ -1,5 +1,10 @@
 const form = document.getElementsByTagName('form')[0]
 document.getElementById('song').play()
+document.getElementsByClassName('close-btn')[0].addEventListener('click', function(){
+    list = document.getElementsByClassName('list')[0]
+    if (list) { list.remove() }
+    document.getElementsByTagName('body')[0].insertAdjacentHTML('beforeend', '<div class="list"></div>')
+})
 //OBSERVER IN JAVASCRIPT
 const observer = new IntersectionObserver(entries => {
     entries.map(entry => {
