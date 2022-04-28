@@ -1,5 +1,5 @@
 const form = document.getElementsByTagName('form')[0]
-
+const apiKey = config.apiKey
 //OBSERVER IN JAVASCRIPT
 const observer = new IntersectionObserver(entries => {
     entries.map(entry => {
@@ -47,7 +47,7 @@ const options = {
 };
 const getList = (e) => {
     e.preventDefault()
-    url = `https://www.omdbapi.com/?s=${urlSearch(form.filmName.value)}&apikey=b9214093`
+    url = `https://www.omdbapi.com/?s=${urlSearch(form.filmName.value)}&apikey=${apiKey}`
     fetch(url, options)
         .then((response) => { return response.json(); })
         .then((response) => { displayList(response.Search) })
@@ -55,7 +55,7 @@ const getList = (e) => {
 }
 
 const getMoviePlot = (id = 'tt0222012') => {
-    url = `https://www.omdbapi.com/?i=${id}&apikey=b9214093`
+    url = `https://www.omdbapi.com/?i=${id}&apikey=${apiKey}`
     fetch(url, {method: 'GET'})
         .then((response) => { return response.json() })
         .then((response) => { 
