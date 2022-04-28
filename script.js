@@ -33,7 +33,7 @@ const options = {
 };
 const getList = (e) => {
     e.preventDefault()
-    url = `http://www.omdbapi.com/?s=${urlSearch(form.filmName.value)}&apikey=b9214093`
+    url = `https://www.omdbapi.com/?s=${urlSearch(form.filmName.value)}&apikey=b9214093`
     fetch(url, options)
         .then((response) => { return response.json(); })
         .then((response) => { displayList(response.Search) })
@@ -41,7 +41,7 @@ const getList = (e) => {
 }
 
 const getMoviePlot = (id = 'tt0222012') => {
-    url = `http://www.omdbapi.com/?i=${id}&apikey=b9214093`
+    url = `https://www.omdbapi.com/?i=${id}&apikey=b9214093`
     fetch(url, {method: 'GET'})
         .then((response) => { return response.json() })
         .then((response) => { 
