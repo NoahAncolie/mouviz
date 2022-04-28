@@ -18,10 +18,34 @@
             <input type="text" class="search-bar" id="filmName">
             <input type="submit" class="submit-btn" value="search">
         </form>
+        <div id="info">loading...</div>
     </div>
     <div class="list">
 
     </div>
+    <div id="player" style="position: absolute; top: -9999px; left: -9999px;"></div>
+<script src="http://www.youtube.com/player_api"></script>
+<script>
+    var info = document.getElementById('info');
+    function onYouTubePlayerAPIReady() {
+    var player = new YT.Player('player', {
+        videoId: 'g4M0hH1R2eU', // this is the id of the video at youtube (the stuff after "?v=")
+        loop: true,
+        events: {
+            onReady: function (e) {
+                info.innerHTML = 'video is loaded';
+                e.target.playVideo();
+            },
+            onStateChange: function (event) {
+                if (event.data === 1) {
+                    info.innerHTML = 'video started playing';
+                }
+            }
+        }
+    });
+  // you can do more stuff with the player variable
+}
+</script>
 </body>
     <script src="script.js"></script>
 </html>

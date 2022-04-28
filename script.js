@@ -8,7 +8,8 @@ const observer = new IntersectionObserver(entries => {
     })
     console.log(entries)
 }, {
-    threshold : 0.2
+    threshold : 0.2,
+    rootMargin : '-10px'
 })
 //END
 
